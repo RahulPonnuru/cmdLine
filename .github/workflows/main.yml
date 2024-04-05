@@ -25,4 +25,6 @@ jobs:
           GET_FORMER_DATA: true
         run: |
           echo "$REGIONS $GET_FORMER_DATA"
-
+          cd operation/scripts
+          echo pwd
+          /bin/bash check.sh $REGIONS $GET_FORMER_DATA
