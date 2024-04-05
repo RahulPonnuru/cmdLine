@@ -19,12 +19,14 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Run
-        env:
-          REGIONS: eu-west-1 us-west-2
-          GET_FORMER_DATA: true
-        run: |
-          echo "$REGIONS $GET_FORMER_DATA"
-          cd operation/scripts
-          echo pwd
-          /bin/bash check.sh $REGIONS $GET_FORMER_DATA
+          env:
+            REGIONS: eu-west-1 us-west-2
+            GET_FORMER_DATA: true
+          run: |
+            echo "$REGIONS $GET_FORMER_DATA"
+            cd operation/scripts
+            echo pwd
+            /bin/bash check.sh $REGIONS $GET_FORMER_DATA
