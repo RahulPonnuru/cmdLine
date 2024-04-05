@@ -17,6 +17,7 @@ on:
 
 jobs:
   check:
+    runs-on: ubuntu-latest
     steps:
       - name: Run
         env:
